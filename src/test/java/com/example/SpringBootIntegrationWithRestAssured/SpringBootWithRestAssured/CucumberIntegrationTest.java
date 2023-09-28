@@ -8,11 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @RunWith(Cucumber.class)
 @CucumberContextConfiguration
-@SpringBootTest(classes = {SpringBootWithRestAssuredApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = {SpringBootWithRestAssuredApplication.class, CucumberIntegrationTest.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @CucumberOptions(
         tags  = "@FirstTest",
-        features =  "src.test.resources.com.example.SpringBootIntegrationWithRestAssured.SpringBootWithRestAssured",
-        glue = {"com.example.SpringBootIntegrationWithRestAssured.SpringBootWithRestAssured"},
+        features =  "com/example/SpringBootIntegrationWithRestAssured/SpringBootWithRestAssured/feature",
+        glue = {"com/example/SpringBootIntegrationWithRestAssured/SpringBootWithRestAssured"},
         plugin = {"pretty"}
 )
 public class CucumberIntegrationTest {
