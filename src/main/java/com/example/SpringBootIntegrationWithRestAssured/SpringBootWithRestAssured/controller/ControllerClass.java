@@ -2,6 +2,7 @@ package com.example.SpringBootIntegrationWithRestAssured.SpringBootWithRestAssur
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,4 +14,9 @@ public class ControllerClass {
         System.out.println("Inside controller");
     }
 
+
+    @GetMapping("")
+    public void getfirst(){
+
+    }
 }

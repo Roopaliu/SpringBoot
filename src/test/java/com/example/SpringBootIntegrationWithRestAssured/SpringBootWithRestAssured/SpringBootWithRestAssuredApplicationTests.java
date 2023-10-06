@@ -15,17 +15,21 @@ class SpringBootWithRestAssuredApplicationTests {
     @Autowired
     TestRestTemplate testRestTemplate;
 
-//    @LocalServerPort
-//    private int port;
+    @LocalServerPort
+    private int port;
 	@Test
 	void getReqres() {
         //Arrange
-        final String baseUrl = "https://reqres.in/api/users?page=2";
+        final String baseUrl = "https://reqres.in/api/users?page=1/";
 
         //Act
         var responseEntity = this.testRestTemplate.getForObject(baseUrl, GetReqres.class);
         System.out.println(GetReqres.class.toString());
         //Assert
+        System.out.println(responseEntity.data.get(0).email.toString());
+
+
+
 
 //        assertThat(responseEntity).isEqualTo("");
 	}
